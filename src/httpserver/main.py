@@ -28,7 +28,7 @@ def home() -> str:
 
 
 def main():
-    app.run("0.0.0.0", PORT, debug=True)
+    app.run("0.0.0.0", PORT)
 
 
 if __name__ == "__main__":
