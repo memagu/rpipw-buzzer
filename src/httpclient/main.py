@@ -23,7 +23,6 @@ BUZZER_PATTERN_REPETITIONS = 5
 
 
 def play_pattern(buzzer: Buzzer, pattern: int, pattern_size: int, duration_seconds: int, repetitions: int) -> None:
-    int = max(min(pattern, (1 << pattern_size) - 1), 0)
     for _ in range(repetitions):
         for bit_pos in range(pattern_size):
             if (pattern >> bit_pos) & 1:
@@ -56,7 +55,7 @@ def connect_wifi(ssid: str, password: str, timeout_seconds: int) -> str:
 
 def get_action(hostname: str, port: int) -> str:
     host = usocket.getaddrinfo(hostname, 80)[0][-1][0]
-    request_address = f"http://{host}:{port}/"
+    request_address = f"http://{host}:{port}/api/get_action"
     print(f'Sending get request to "{request_address}"')
     response = urequests.get(request_address)
 
