@@ -11,15 +11,15 @@
 </head>
 <body>
     <h1>Current action: {{ action }}</h1>
-    <form action="/actions" method="post">
+    <form action="/" method="post">
         <input type="hidden" name="action" value="beep">
         <input type="submit" value="Make sound">
     </form>
-    <form action="/actions" method="post">
+    <form action="/" method="post">
         <input type="hidden" name="action" value="do_nothing">
         <input type="submit" value="Be quiet">
     </form>
-    <form action="/actions" method="post">
+    <form action="/" method="post">
         <input type="hidden" name="action" value="kill">
         <input type="submit" value="Kill client">
     </form>
